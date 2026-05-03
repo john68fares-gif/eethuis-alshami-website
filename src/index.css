@@ -2,62 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    /* Black-dominant, gold accent, white text */
-    --background: 0 0% 6%;
-    --foreground: 0 0% 98%;
+    /* Black, gold, white palette — Eethuis Al Shami */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
 
-    --card: 0 0% 9%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
 
-    --popover: 0 0% 9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
 
-    /* Primary = gold */
-    --primary: 42 75% 55%;
-    --primary-foreground: 0 0% 6%;
+    /* Deep matte black */
+    --primary: 0 0% 8%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 98%;
+    /* Soft warm white */
+    --secondary: 40 20% 97%;
+    --secondary-foreground: 0 0% 8%;
 
-    --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 40 15% 95%;
+    --muted-foreground: 0 0% 35%;
 
-    --accent: 42 75% 55%;
-    --accent-foreground: 0 0% 6%;
+    /* Gold */
+    --accent: 42 65% 52%;
+    --accent-foreground: 0 0% 8%;
 
-    --gold: 42 75% 55%;
-    --gold-foreground: 0 0% 6%;
-    --gold-light: 44 85% 70%;
-    --gold-dark: 38 65% 42%;
+    --gold: 42 65% 52%;
+    --gold-foreground: 0 0% 8%;
+    --gold-light: 44 75% 68%;
+    --gold-dark: 38 60% 38%;
 
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 42 75% 55%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 42 65% 52%;
 
-    --radius: 1rem;
+    --radius: 0.25rem;
 
-    --gradient-gold: linear-gradient(135deg, hsl(38 65% 42%), hsl(42 75% 55%) 50%, hsl(44 85% 70%));
-    --gradient-overlay: linear-gradient(180deg, hsl(0 0% 0% / 0.4) 0%, hsl(0 0% 4% / 0.95) 100%);
-    --gradient-dark: linear-gradient(180deg, hsl(0 0% 8%), hsl(0 0% 5%));
+    --gradient-gold: linear-gradient(135deg, hsl(38 60% 38%), hsl(42 65% 52%) 50%, hsl(44 75% 68%));
+    --gradient-overlay: linear-gradient(180deg, hsl(0 0% 0% / 0.55) 0%, hsl(0 0% 0% / 0.85) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 10%), hsl(0 0% 6%));
 
-    --shadow-gold: 0 20px 60px -20px hsl(42 75% 55% / 0.45);
-    --shadow-soft: 0 10px 40px -10px hsl(0 0% 0% / 0.5);
+    --shadow-gold: 0 20px 60px -20px hsl(42 65% 52% / 0.4);
+    --shadow-soft: 0 8px 24px -8px hsl(0 0% 0% / 0.12);
 
-    --sidebar-background: 0 0% 6%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 42 75% 55%;
-    --sidebar-primary-foreground: 0 0% 6%;
-    --sidebar-accent: 0 0% 12%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 0 0% 18%;
-    --sidebar-ring: 42 75% 55%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -65,11 +67,10 @@
   * { @apply border-border; }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Outfit', system-ui, sans-serif;
-    font-feature-settings: 'ss01', 'cv11';
+    font-family: 'Inter', system-ui, sans-serif;
   }
   h1, h2, h3, h4 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Cormorant Garamond', Georgia, serif;
     @apply tracking-tight;
   }
 }
@@ -86,7 +87,7 @@
   }
   .shadow-gold { box-shadow: var(--shadow-gold); }
   .shadow-soft { box-shadow: var(--shadow-soft); }
-  .font-serif-display { font-family: 'Playfair Display', Georgia, serif; }
+  .font-serif-display { font-family: 'Cormorant Garamond', Georgia, serif; }
   .gold-divider {
     height: 1px;
     background-image: linear-gradient(90deg, transparent, hsl(var(--gold)), transparent);

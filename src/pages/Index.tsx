@@ -312,53 +312,53 @@ const Index = () => {
   const [activeCat, setActiveCat] = useState(menu[0].id);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background">
       {/* Nav */}
-      <header className="fixed top-0 z-50 w-full bg-background/85 backdrop-blur-xl border-b border-border">
-        <nav className="container flex items-center justify-between h-18 py-3">
-          <a href="#top" className="font-serif-display text-xl md:text-2xl font-semibold">
+      <header className="fixed top-0 z-50 w-full bg-primary/95 backdrop-blur-md border-b border-gold/20">
+        <nav className="container flex items-center justify-between h-16">
+          <a href="#top" className="font-serif-display text-xl md:text-2xl font-semibold text-primary-foreground">
             Eethuis <span className="text-gradient-gold italic">Al Shami</span>
           </a>
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-foreground/70">
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-primary-foreground/80">
             <a href="#menu" className="hover:text-gold transition-colors">Menu</a>
             <a href="#reviews" className="hover:text-gold transition-colors">Beoordelingen</a>
             <a href="#contact" className="hover:text-gold transition-colors">Contact</a>
           </div>
-          <Button asChild size="sm" className="bg-gradient-gold text-gold-foreground hover:opacity-90 font-semibold rounded-full px-5">
+          <Button asChild size="sm" className="bg-gradient-gold text-gold-foreground hover:opacity-90 font-semibold">
             <a href="https://www.thuisbezorgd.nl/menu/eethuis-al-shami" target="_blank" rel="noopener">Bestellen</a>
           </Button>
         </nav>
       </header>
 
       {/* Hero */}
-      <section id="top" className="relative min-h-screen flex items-center bg-background overflow-hidden">
+      <section id="top" className="relative min-h-screen flex items-center bg-primary overflow-hidden">
         <img
           src={heroImg}
           alt="Kipshoarma van het spit met vlammen"
           width={1920}
           height={1280}
-          className="absolute inset-0 w-full h-full object-cover opacity-60"
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
         />
         <div className="absolute inset-0 bg-gradient-overlay" />
         <div className="relative z-10 container px-6 py-32">
           <div className="max-w-3xl">
             <p className="text-gold font-medium tracking-[0.35em] text-xs md:text-sm mb-6 uppercase">Shoarma · Döner · Syrische Keuken</p>
-            <h1 className="font-serif-display text-foreground text-5xl md:text-7xl lg:text-8xl font-semibold leading-[1.02] mb-6">
+            <h1 className="font-serif-display text-primary-foreground text-5xl md:text-7xl lg:text-8xl font-semibold leading-[1.02] mb-6">
               Eethuis<br />
               <span className="text-gradient-gold italic">Al Shami</span>
             </h1>
             <div className="gold-divider w-32 mb-6" />
-            <p className="text-foreground/80 text-lg md:text-xl mb-10 max-w-xl leading-relaxed">
+            <p className="text-primary-foreground/80 text-lg md:text-xl mb-10 max-w-xl leading-relaxed">
               Authentieke shoarma van het spit, huisgemaakte manakeesh en Syrische specialiteiten —
               vers bereid in het hart van Middelburg.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="bg-gradient-gold text-gold-foreground hover:opacity-90 shadow-gold h-14 px-8 font-semibold rounded-full">
+              <Button asChild size="lg" className="bg-gradient-gold text-gold-foreground hover:opacity-90 shadow-gold h-12 px-8 font-semibold">
                 <a href="https://www.thuisbezorgd.nl/menu/eethuis-al-shami" target="_blank" rel="noopener">
                   Online bestellen <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-transparent border-foreground/30 text-foreground hover:bg-foreground hover:text-background h-14 px-8 rounded-full">
+              <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground hover:text-primary h-12 px-8">
                 <a href="tel:+31681932900"><Phone className="mr-2 h-4 w-4" /> +31 6 81932900</a>
               </Button>
             </div>
@@ -367,14 +367,14 @@ const Index = () => {
       </section>
 
       {/* Quick info bar */}
-      <section className="bg-card border-y border-border">
-        <div className="container grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
+      <section className="bg-primary text-primary-foreground border-y border-gold/20">
+        <div className="container grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gold/20">
           {[
             { icon: MapPin, label: "Vrijlandstraat 37, 4337 EB Middelburg" },
             { icon: Clock, label: "Open vandaag · 11:00 – 23:30" },
             { icon: Star, label: "4.1 ★ op Google" },
           ].map(({ icon: Icon, label }) => (
-            <div key={label} className="flex items-center justify-center gap-3 py-5 px-4 text-sm text-foreground/85">
+            <div key={label} className="flex items-center justify-center gap-3 py-5 px-4 text-sm">
               <Icon className="h-4 w-4 text-gold" />
               <span>{label}</span>
             </div>
@@ -385,14 +385,14 @@ const Index = () => {
       {/* Highlights */}
       <section className="py-24 md:py-32 container">
         <div className="text-center mb-16">
-          <p className="text-gold font-medium tracking-[0.3em] text-xs uppercase mb-4">Specialiteiten</p>
+          <p className="text-gold-dark font-medium tracking-[0.3em] text-xs uppercase mb-4">Specialiteiten</p>
           <h2 className="text-4xl md:text-5xl font-semibold mb-4">Onze populairste gerechten</h2>
           <div className="gold-divider w-24 mx-auto" />
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {highlights.map((item) => (
-            <article key={item.name} className="group bg-card border border-border rounded-3xl overflow-hidden hover:border-gold/60 transition-all duration-500 hover:shadow-gold hover:-translate-y-1">
-              <div className="aspect-[4/3] overflow-hidden bg-secondary">
+            <article key={item.name} className="group bg-card border border-border overflow-hidden hover:border-gold/50 transition-all duration-500 hover:shadow-gold">
+              <div className="aspect-[4/3] overflow-hidden bg-primary">
                 <img src={item.img} alt={item.name} loading="lazy" width={896} height={896} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="p-6">
@@ -408,16 +408,16 @@ const Index = () => {
       </section>
 
       {/* Full menu */}
-      <section id="menu" className="py-24 md:py-32 bg-card">
+      <section id="menu" className="py-24 md:py-32 bg-secondary">
         <div className="container">
           <div className="text-center mb-12">
-            <p className="text-gold font-medium tracking-[0.3em] text-xs uppercase mb-4">Menukaart</p>
+            <p className="text-gold-dark font-medium tracking-[0.3em] text-xs uppercase mb-4">Menukaart</p>
             <h2 className="text-4xl md:text-5xl font-semibold mb-4">De volledige kaart</h2>
             <div className="gold-divider w-24 mx-auto" />
           </div>
 
           {/* Category tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-16 max-w-5xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-2 mb-12 max-w-5xl mx-auto">
             {menu.map((cat) => (
               <button
                 key={cat.id}
@@ -425,10 +425,10 @@ const Index = () => {
                   setActiveCat(cat.id);
                   document.getElementById(cat.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className={`px-5 py-2.5 text-sm font-medium rounded-full border transition-all ${
+                className={`px-4 py-2 text-sm font-medium border transition-all ${
                   activeCat === cat.id
-                    ? "bg-gradient-gold text-gold-foreground border-transparent shadow-gold"
-                    : "bg-background text-foreground/80 border-border hover:border-gold hover:text-gold"
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-background text-foreground border-border hover:border-gold hover:text-gold-dark"
                 }`}
               >
                 {cat.name}
@@ -438,7 +438,7 @@ const Index = () => {
 
           <div className="max-w-4xl mx-auto space-y-16">
             {menu.map((cat) => (
-              <div key={cat.id} id={cat.id} className="scroll-mt-32 bg-background rounded-3xl p-8 md:p-10 border border-border">
+              <div key={cat.id} id={cat.id} className="scroll-mt-32">
                 <div className="mb-8 text-center">
                   <h3 className="font-serif-display text-3xl md:text-4xl font-semibold mb-2">{cat.name}</h3>
                   {cat.note && <p className="text-muted-foreground text-sm italic">{cat.note}</p>}
@@ -448,10 +448,10 @@ const Index = () => {
                   {cat.items.map((item) => (
                     <div key={item.name} className="flex items-baseline gap-4 border-b border-dashed border-border pb-4">
                       <div className="flex-1">
-                        <h4 className="font-semibold text-base mb-1 text-foreground">{item.name}</h4>
+                        <h4 className="font-semibold text-base mb-1">{item.name}</h4>
                         {item.desc && <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>}
                       </div>
-                      <span className="font-serif-display text-lg text-gold font-semibold whitespace-nowrap">{item.price}</span>
+                      <span className="font-serif-display text-lg text-gold-dark font-semibold whitespace-nowrap">{item.price}</span>
                     </div>
                   ))}
                 </div>
@@ -462,7 +462,7 @@ const Index = () => {
       </section>
 
       {/* Reviews */}
-      <section id="reviews" className="py-24 md:py-32 bg-background">
+      <section id="reviews" className="py-24 md:py-32 bg-primary text-primary-foreground">
         <div className="container">
           <div className="text-center mb-16">
             <p className="text-gold font-medium tracking-[0.3em] text-xs uppercase mb-4">Beoordelingen</p>
@@ -471,19 +471,19 @@ const Index = () => {
               {[...Array(4)].map((_, i) => <Star key={i} className="h-5 w-5 fill-gold text-gold" />)}
               <Star className="h-5 w-5 fill-gold/40 text-gold" />
             </div>
-            <p className="text-muted-foreground text-sm">4.1 / 5 op Google · 141 beoordelingen</p>
+            <p className="text-primary-foreground/70 text-sm">4.1 / 5 op Google · 141 beoordelingen</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {reviews.map((r) => (
-              <article key={r.name} className="bg-card border border-border rounded-3xl p-8 hover:border-gold/40 transition-colors">
+              <article key={r.name} className="bg-primary-foreground/5 border border-gold/20 p-8">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-gold text-gold" />)}
                 </div>
-                <p className="text-foreground/85 leading-relaxed mb-6 italic font-serif-display text-lg">"{r.text}"</p>
+                <p className="text-primary-foreground/90 leading-relaxed mb-6 italic">"{r.text}"</p>
                 <div>
                   <p className="font-semibold text-gold">{r.name}</p>
-                  <p className="text-xs text-muted-foreground mt-1">{r.meta}</p>
-                  <p className="text-xs text-muted-foreground/70 mt-1">via {r.source}</p>
+                  <p className="text-xs text-primary-foreground/60 mt-1">{r.meta}</p>
+                  <p className="text-xs text-primary-foreground/50 mt-1">via {r.source}</p>
                 </div>
               </article>
             ))}
@@ -494,39 +494,55 @@ const Index = () => {
       {/* Contact */}
       <section id="contact" className="py-24 md:py-32 container">
         <div className="text-center mb-16">
-          <p className="text-gold font-medium tracking-[0.3em] text-xs uppercase mb-4">Bezoek Ons</p>
+          <p className="text-gold-dark font-medium tracking-[0.3em] text-xs uppercase mb-4">Bezoek Ons</p>
           <h2 className="text-4xl md:text-5xl font-semibold mb-4">Contact & openingstijden</h2>
           <div className="gold-divider w-24 mx-auto" />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <div className="space-y-6">
-            {[
-              { icon: MapPin, title: "Adres", content: <p className="text-muted-foreground">Vrijlandstraat 37<br />4337 EB Middelburg</p> },
-              { icon: Phone, title: "Telefoon", content: <a href="tel:+31681932900" className="text-muted-foreground hover:text-gold">+31 6 81932900</a> },
-              { icon: Mail, title: "E-mail", content: <a href="mailto:eethuisalshami@gmail.com" className="text-muted-foreground hover:text-gold">eethuisalshami@gmail.com</a> },
-              { icon: ExternalLink, title: "Online bestellen", content: (
-                <div className="space-y-1">
-                  <a href="https://www.thuisbezorgd.nl/menu/eethuis-al-shami" target="_blank" rel="noopener" className="text-muted-foreground hover:text-gold block">Thuisbezorgd</a>
-                  <a href="https://eethuisalshami-middelburg.nl/" target="_blank" rel="noopener" className="text-muted-foreground hover:text-gold block">eethuisalshami-middelburg.nl</a>
-                </div>
-              ) },
-            ].map(({ icon: Icon, title, content }) => (
-              <div key={title} className="flex gap-5 p-6 bg-card border border-border rounded-2xl hover:border-gold/40 transition-colors">
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center">
-                  <Icon className="h-5 w-5 text-gold-foreground" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-1">{title}</h3>
-                  {content}
-                </div>
+          <div className="space-y-8">
+            <div className="flex gap-5">
+              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center">
+                <MapPin className="h-5 w-5 text-gold" />
               </div>
-            ))}
+              <div>
+                <h3 className="font-semibold text-lg mb-1">Adres</h3>
+                <p className="text-muted-foreground">Vrijlandstraat 37<br />4337 EB Middelburg</p>
+              </div>
+            </div>
+            <div className="flex gap-5">
+              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center">
+                <Phone className="h-5 w-5 text-gold" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg mb-1">Telefoon</h3>
+                <a href="tel:+31681932900" className="text-muted-foreground hover:text-gold-dark">+31 6 81932900</a>
+              </div>
+            </div>
+            <div className="flex gap-5">
+              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center">
+                <Mail className="h-5 w-5 text-gold" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg mb-1">E-mail</h3>
+                <a href="mailto:eethuisalshami@gmail.com" className="text-muted-foreground hover:text-gold-dark">eethuisalshami@gmail.com</a>
+              </div>
+            </div>
+            <div className="flex gap-5">
+              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center">
+                <ExternalLink className="h-5 w-5 text-gold" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg mb-1">Online bestellen</h3>
+                <a href="https://www.thuisbezorgd.nl/menu/eethuis-al-shami" target="_blank" rel="noopener" className="text-muted-foreground hover:text-gold-dark block">Thuisbezorgd</a>
+                <a href="https://eethuisalshami-middelburg.nl/" target="_blank" rel="noopener" className="text-muted-foreground hover:text-gold-dark block">eethuisalshami-middelburg.nl</a>
+              </div>
+            </div>
           </div>
 
-          <div className="bg-card p-8 border border-border rounded-3xl">
+          <div className="bg-secondary p-8 border border-border">
             <div className="flex items-center gap-3 mb-6">
-              <Clock className="h-5 w-5 text-gold" />
+              <Clock className="h-5 w-5 text-gold-dark" />
               <h3 className="font-serif-display text-2xl font-semibold">Openingstijden</h3>
             </div>
             <ul className="space-y-3">
@@ -540,28 +556,28 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="mt-16 max-w-6xl mx-auto rounded-3xl overflow-hidden border border-border">
+        <div className="mt-16 max-w-6xl mx-auto">
           <iframe
             title="Locatie Eethuis Al Shami"
             src="https://www.google.com/maps?q=Vrijlandstraat+37,+4337+EB+Middelburg&output=embed"
             width="100%"
             height="400"
             loading="lazy"
-            style={{ filter: "invert(0.9) hue-rotate(180deg) saturate(0.6)" }}
+            className="border border-border"
           />
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-card border-t border-border py-12">
+      <footer className="bg-primary text-primary-foreground py-12 border-t border-gold/20">
         <div className="container flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="font-serif-display text-2xl">
             Eethuis <span className="text-gradient-gold italic">Al Shami</span>
           </div>
-          <p className="text-muted-foreground text-sm text-center">
+          <p className="text-primary-foreground/60 text-sm text-center">
             Vrijlandstraat 37, 4337 EB Middelburg · +31 6 81932900
           </p>
-          <p className="text-muted-foreground/60 text-xs">© {new Date().getFullYear()} Eethuis Al Shami</p>
+          <p className="text-primary-foreground/40 text-xs">© {new Date().getFullYear()} Eethuis Al Shami</p>
         </div>
       </footer>
     </div>
