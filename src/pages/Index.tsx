@@ -382,81 +382,33 @@ const Index = () => {
       </section>
 
       {/* Highlights */}
-      <section className="py-24 md:py-32 container">
+      <section id="menu" className="py-24 md:py-32 container">
         <div className="text-center mb-16">
-          <p className="text-gold-dark font-medium tracking-[0.3em] text-xs uppercase mb-4">Specialiteiten</p>
+          <p className="text-gold font-medium tracking-[0.3em] text-xs uppercase mb-4">Specialiteiten</p>
           <h2 className="text-4xl md:text-5xl font-semibold mb-4">Onze populairste gerechten</h2>
-          <div className="gold-divider w-24 mx-auto" />
+          <div className="gold-divider w-24 mx-auto mb-4" />
+          <p className="text-muted-foreground max-w-xl mx-auto">Een selectie uit onze kaart — bekijk de volledige menukaart op Thuisbezorgd.</p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {highlights.map((item) => (
-            <article key={item.name} className="group bg-card border border-border overflow-hidden hover:border-gold/50 transition-all duration-500 hover:shadow-gold">
+            <article key={item.name} className="group bg-card border border-border overflow-hidden hover:border-gold/50 transition-all duration-500 hover:shadow-gold flex flex-col">
               <div className="aspect-[4/3] overflow-hidden bg-primary">
                 <img src={item.img} alt={item.name} loading="lazy" width={896} height={896} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
-              <div className="p-6">
-                <div className="flex items-baseline justify-between gap-4 mb-2">
-                  <h3 className="text-2xl font-semibold">{item.name}</h3>
-                  <span className="text-gradient-gold font-serif-display text-xl font-semibold whitespace-nowrap">{item.price}</span>
-                </div>
+              <div className="p-6 text-center flex-1 flex flex-col items-center">
+                <h3 className="text-xl font-semibold mb-2">{item.name}</h3>
+                <span className="text-gradient-gold font-serif-display text-xl font-semibold mb-3">{item.price}</span>
                 <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
               </div>
             </article>
           ))}
         </div>
-      </section>
-
-      {/* Full menu */}
-      <section id="menu" className="py-24 md:py-32 bg-secondary">
-        <div className="container">
-          <div className="text-center mb-12">
-            <p className="text-gold-dark font-medium tracking-[0.3em] text-xs uppercase mb-4">Menukaart</p>
-            <h2 className="text-4xl md:text-5xl font-semibold mb-4">De volledige kaart</h2>
-            <div className="gold-divider w-24 mx-auto" />
-          </div>
-
-          {/* Category tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12 max-w-5xl mx-auto">
-            {menu.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => {
-                  setActiveCat(cat.id);
-                  document.getElementById(cat.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-                }}
-                className={`px-4 py-2 text-sm font-medium border transition-all ${
-                  activeCat === cat.id
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "bg-background text-foreground border-border hover:border-gold hover:text-gold-dark"
-                }`}
-              >
-                {cat.name}
-              </button>
-            ))}
-          </div>
-
-          <div className="max-w-4xl mx-auto space-y-16">
-            {menu.map((cat) => (
-              <div key={cat.id} id={cat.id} className="scroll-mt-32">
-                <div className="mb-8 text-center">
-                  <h3 className="font-serif-display text-3xl md:text-4xl font-semibold mb-2">{cat.name}</h3>
-                  {cat.note && <p className="text-muted-foreground text-sm italic">{cat.note}</p>}
-                  <div className="gold-divider w-16 mx-auto mt-4" />
-                </div>
-                <div className="grid sm:grid-cols-2 gap-x-10 gap-y-6">
-                  {cat.items.map((item) => (
-                    <div key={item.name} className="flex items-baseline gap-4 border-b border-dashed border-border pb-4">
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-base mb-1">{item.name}</h4>
-                        {item.desc && <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>}
-                      </div>
-                      <span className="font-serif-display text-lg text-gold-dark font-semibold whitespace-nowrap">{item.price}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="text-center mt-12">
+          <Button asChild size="lg" className="bg-gradient-gold text-white hover:opacity-90 font-semibold h-12 px-8">
+            <a href="https://www.thuisbezorgd.nl/menu/eethuis-al-shami" target="_blank" rel="noopener">
+              Bekijk volledige menukaart <ExternalLink className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
         </div>
       </section>
 
