@@ -31,8 +31,6 @@ const hours = [
 ];
 
 const Index = () => {
-  const [activeCat, setActiveCat] = useState(menu[0].id);
-
   return (
     <div className="min-h-screen bg-background">
       {/* Nav */}
