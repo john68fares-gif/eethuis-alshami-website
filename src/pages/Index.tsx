@@ -44,8 +44,8 @@ const Index = () => {
             <a href="#reviews" className="hover:text-gold transition-colors">Beoordelingen</a>
             <a href="#contact" className="hover:text-gold transition-colors">Contact</a>
           </div>
-          <Button asChild size="sm" className="bg-gradient-gold text-white hover:opacity-90 font-semibold">
-            <a href="https://www.thuisbezorgd.nl/menu/eethuis-al-shami" target="_blank" rel="noopener">Bestellen</a>
+          <Button asChild size="sm" className="bg-gradient-gold text-white hover:opacity-90 font-semibold rounded-lg">
+            <a href="tel:+31681932900">Bel ons</a>
           </Button>
         </nav>
       </header>
@@ -73,13 +73,11 @@ const Index = () => {
               vers bereid in het hart van Middelburg.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-gradient-gold text-white hover:opacity-90 shadow-gold h-12 px-8 font-semibold">
-                <a href="https://www.thuisbezorgd.nl/menu/eethuis-al-shami" target="_blank" rel="noopener">
-                  Online bestellen <ExternalLink className="ml-2 h-4 w-4" />
-                </a>
+              <Button asChild size="lg" className="bg-gradient-gold text-white hover:opacity-90 shadow-gold h-12 px-8 font-semibold rounded-lg">
+                <a href="tel:+31681932900"><Phone className="mr-2 h-4 w-4" /> Bel & reserveer</a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/40 text-white hover:bg-primary-foreground hover:text-primary h-12 px-8">
-                <a href="tel:+31681932900"><Phone className="mr-2 h-4 w-4" /> +31 6 81932900</a>
+              <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/40 text-white hover:bg-primary-foreground hover:text-primary h-12 px-8 rounded-lg">
+                <a href="#menu">Bekijk menu</a>
               </Button>
             </div>
           </div>
@@ -108,11 +106,11 @@ const Index = () => {
           <p className="text-gold font-medium tracking-[0.3em] text-xs uppercase mb-4">Specialiteiten</p>
           <h2 className="text-4xl md:text-5xl font-semibold mb-4">Onze populairste gerechten</h2>
           <div className="gold-divider w-24 mx-auto mb-4" />
-          <p className="text-muted-foreground max-w-xl mx-auto">Een selectie uit onze kaart — bekijk de volledige menukaart op Thuisbezorgd.</p>
+          <p className="text-muted-foreground max-w-xl mx-auto">Een selectie uit onze kaart — kom langs of bel ons om te bestellen.</p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {highlights.map((item) => (
-            <article key={item.name} className="group bg-card border border-border overflow-hidden hover:border-gold/50 transition-all duration-500 hover:shadow-gold flex flex-col">
+            <article key={item.name} className="group bg-card border border-border rounded-xl overflow-hidden hover:border-gold/50 transition-all duration-500 hover:shadow-gold flex flex-col">
               <div className="aspect-[4/3] overflow-hidden bg-primary">
                 <img src={item.img} alt={item.name} loading="lazy" width={896} height={896} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
@@ -125,9 +123,9 @@ const Index = () => {
           ))}
         </div>
         <div className="text-center mt-12">
-          <Button asChild size="lg" className="bg-gradient-gold text-white hover:opacity-90 font-semibold h-12 px-8">
-            <a href="https://www.thuisbezorgd.nl/menu/eethuis-al-shami" target="_blank" rel="noopener">
-              Bekijk volledige menukaart <ExternalLink className="ml-2 h-4 w-4" />
+          <Button asChild size="lg" className="bg-gradient-gold text-white hover:opacity-90 font-semibold h-12 px-8 rounded-lg">
+            <a href="tel:+31681932900">
+              <Phone className="mr-2 h-4 w-4" /> Bel om te bestellen
             </a>
           </Button>
         </div>
@@ -147,7 +145,7 @@ const Index = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {reviews.map((r) => (
-              <article key={r.name} className="bg-primary-foreground/5 border border-gold/20 p-8">
+              <article key={r.name} className="bg-primary-foreground/5 border border-gold/20 p-8 rounded-xl">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-gold text-gold" />)}
                 </div>
@@ -174,7 +172,7 @@ const Index = () => {
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div className="space-y-8">
             <div className="flex gap-5">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center rounded-lg">
                 <MapPin className="h-5 w-5 text-gold" />
               </div>
               <div>
@@ -183,7 +181,7 @@ const Index = () => {
               </div>
             </div>
             <div className="flex gap-5">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center rounded-lg">
                 <Phone className="h-5 w-5 text-gold" />
               </div>
               <div>
@@ -192,7 +190,7 @@ const Index = () => {
               </div>
             </div>
             <div className="flex gap-5">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center rounded-lg">
                 <Mail className="h-5 w-5 text-gold" />
               </div>
               <div>
@@ -201,18 +199,17 @@ const Index = () => {
               </div>
             </div>
             <div className="flex gap-5">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center rounded-lg">
                 <ExternalLink className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg mb-1">Online bestellen</h3>
-                <a href="https://www.thuisbezorgd.nl/menu/eethuis-al-shami" target="_blank" rel="noopener" className="text-muted-foreground hover:text-gold-dark block">Thuisbezorgd</a>
+                <h3 className="font-semibold text-lg mb-1">Website</h3>
                 <a href="https://eethuisalshami-middelburg.nl/" target="_blank" rel="noopener" className="text-muted-foreground hover:text-gold-dark block">eethuisalshami-middelburg.nl</a>
               </div>
             </div>
           </div>
 
-          <div className="bg-secondary p-8 border border-border">
+          <div className="bg-secondary p-8 border border-border rounded-xl">
             <div className="flex items-center gap-3 mb-6">
               <Clock className="h-5 w-5 text-gold-dark" />
               <h3 className="font-serif-display text-2xl font-semibold">Openingstijden</h3>
@@ -235,7 +232,7 @@ const Index = () => {
             width="100%"
             height="400"
             loading="lazy"
-            className="border border-border"
+            className="border border-border rounded-xl"
           />
         </div>
       </section>
