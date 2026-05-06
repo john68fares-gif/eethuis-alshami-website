@@ -286,8 +286,7 @@ const menu: Category[] = [
 
 const highlights = [
   { name: "Kapsalon kipshoarma", price: "€ 12,00", img: kapsalonImg, desc: "Met friet, salademix en Syrische knoflooksaus." },
-  { name: "Schotel kipshoarma", price: "€ 16,00", img: shawarmaImg, desc: "Arabische aardappel of rijst, broodje, augurk, koolsalade en Syrische knoflooksaus." },
-  { name: "Schotel falafel", price: "€ 12,00", img: falafelImg, desc: "Sla, broodje, komkommer, tomaat, uitjes, augurk en tahina." },
+  { name: "Schotel kalfsshoarma", price: "€ 18,00", img: shawarmaImg, desc: "Arabische aardappel of rijst, broodje, augurk, koolsalade en tahina." },
   { name: "Manakeesh za'atar", price: "€ 1,50", img: manakeeshImg, desc: "Huisgemaakt Syrisch deeg met kruidenmengsel van oregano en tijm." },
   { name: "Baklava", price: "€ 7,00", img: baklavaImg, desc: "6 stuks, filodeeg lagen van pistache en honing." },
 ];
