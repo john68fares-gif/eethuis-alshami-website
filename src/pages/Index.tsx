@@ -73,13 +73,11 @@ const Index = () => {
               vers bereid in het hart van Middelburg.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-gradient-gold text-white hover:opacity-90 shadow-gold h-12 px-8 font-semibold">
-                <a href="https://www.thuisbezorgd.nl/menu/eethuis-al-shami" target="_blank" rel="noopener">
-                  Online bestellen <ExternalLink className="ml-2 h-4 w-4" />
-                </a>
+              <Button asChild size="lg" className="bg-gradient-gold text-white hover:opacity-90 shadow-gold h-12 px-8 font-semibold rounded-lg">
+                <a href="tel:+31681932900"><Phone className="mr-2 h-4 w-4" /> Bel & reserveer</a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/40 text-white hover:bg-primary-foreground hover:text-primary h-12 px-8">
-                <a href="tel:+31681932900"><Phone className="mr-2 h-4 w-4" /> +31 6 81932900</a>
+              <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/40 text-white hover:bg-primary-foreground hover:text-primary h-12 px-8 rounded-lg">
+                <a href="#menu">Bekijk menu</a>
               </Button>
             </div>
           </div>
