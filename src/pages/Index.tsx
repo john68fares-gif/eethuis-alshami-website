@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Clock, Mail, Star, ExternalLink } from "lucide-react";
+import { useReveal } from "@/hooks/use-reveal";
 import heroImg from "@/assets/hero-shawarma-spit.jpg";
 import kapsalonImg from "@/assets/dish-kapsalon.jpg";
 import shawarmaImg from "@/assets/dish-shawarma.jpg";
@@ -31,6 +32,10 @@ const hours = [
 ];
 
 const Index = () => {
+  const info = useReveal<HTMLElement>();
+  const menu = useReveal<HTMLElement>();
+  const reviewsR = useReveal<HTMLElement>();
+  const contact = useReveal<HTMLElement>();
   return (
     <div className="min-h-screen bg-background">
       {/* Nav */}
