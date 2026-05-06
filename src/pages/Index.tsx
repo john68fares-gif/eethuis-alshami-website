@@ -1,15 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Clock, Mail, Star, ExternalLink } from "lucide-react";
-import { useState } from "react";
 import heroImg from "@/assets/hero-shawarma-spit.jpg";
 import kapsalonImg from "@/assets/dish-kapsalon.jpg";
 import shawarmaImg from "@/assets/dish-shawarma.jpg";
-import falafelImg from "@/assets/dish-falafel.jpg";
 import baklavaImg from "@/assets/dish-baklava.jpg";
 import manakeeshImg from "@/assets/dish-manakeesh.jpg";
-
-type Item = { name: string; desc?: string; price: string };
-type Category = { id: string; name: string; note?: string; items: Item[] };
 
 const menu: Category[] = [
   {
