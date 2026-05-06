@@ -137,9 +137,9 @@ const Index = () => {
       </section>
 
       {/* Reviews */}
-      <section id="reviews" className="py-24 md:py-32 bg-primary text-primary-foreground">
+      <section ref={reviewsR.ref} id="reviews" className="py-24 md:py-32 bg-primary text-primary-foreground">
         <div className="container">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 ${reviewsR.visible ? "animate-fade-in-up" : "opacity-0"}`}>
             <p className="text-gold font-medium tracking-[0.3em] text-xs uppercase mb-4">Beoordelingen</p>
             <h2 className="text-4xl md:text-5xl font-semibold mb-4">Wat onze gasten zeggen</h2>
             <div className="flex items-center justify-center gap-1 mb-2">
@@ -149,8 +149,8 @@ const Index = () => {
             <p className="text-primary-foreground/70 text-sm">4.1 / 5 op Google · 141 beoordelingen</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {reviews.map((r) => (
-              <article key={r.name} className="bg-primary-foreground/5 border border-gold/20 p-8 rounded-xl">
+            {reviews.map((r, i) => (
+              <article key={r.name} className={`bg-primary-foreground/5 border border-gold/20 p-8 rounded-xl ${reviewsR.visible ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: `${150 + i * 150}ms` }}>
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-gold text-gold" />)}
                 </div>
@@ -167,15 +167,15 @@ const Index = () => {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-24 md:py-32 container">
-        <div className="text-center mb-16">
+      <section ref={contact.ref} id="contact" className="py-24 md:py-32 container">
+        <div className={`text-center mb-16 ${contact.visible ? "animate-fade-in-up" : "opacity-0"}`}>
           <p className="text-gold-dark font-medium tracking-[0.3em] text-xs uppercase mb-4">Bezoek Ons</p>
           <h2 className="text-4xl md:text-5xl font-semibold mb-4">Contact & openingstijden</h2>
           <div className="gold-divider w-24 mx-auto" />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <div className="space-y-8">
+          <div className={`space-y-8 ${contact.visible ? "animate-slide-in-left" : "opacity-0"}`} style={{ animationDelay: "150ms" }}>
             <div className="flex gap-5">
               <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center rounded-lg">
                 <MapPin className="h-5 w-5 text-gold" />
@@ -214,7 +214,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="bg-secondary p-8 border border-border rounded-xl">
+          <div className={`bg-secondary p-8 border border-border rounded-xl ${contact.visible ? "animate-slide-in-right" : "opacity-0"}`} style={{ animationDelay: "300ms" }}>
             <div className="flex items-center gap-3 mb-6">
               <Clock className="h-5 w-5 text-gold-dark" />
               <h3 className="font-serif-display text-2xl font-semibold">Openingstijden</h3>
@@ -230,7 +230,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="mt-16 max-w-6xl mx-auto">
+        <div className={`mt-16 max-w-6xl mx-auto ${contact.visible ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: "450ms" }}>
           <iframe
             title="Locatie Eethuis Al Shami"
             src="https://www.google.com/maps?q=Vrijlandstraat+37,+4337+EB+Middelburg&output=embed"
