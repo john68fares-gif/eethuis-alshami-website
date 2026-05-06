@@ -145,7 +145,7 @@ const Index = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {reviews.map((r) => (
-              <article key={r.name} className="bg-primary-foreground/5 border border-gold/20 p-8">
+              <article key={r.name} className="bg-primary-foreground/5 border border-gold/20 p-8 rounded-xl">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-gold text-gold" />)}
                 </div>
@@ -172,7 +172,7 @@ const Index = () => {
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div className="space-y-8">
             <div className="flex gap-5">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center rounded-lg">
                 <MapPin className="h-5 w-5 text-gold" />
               </div>
               <div>
@@ -181,7 +181,7 @@ const Index = () => {
               </div>
             </div>
             <div className="flex gap-5">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center rounded-lg">
                 <Phone className="h-5 w-5 text-gold" />
               </div>
               <div>
@@ -190,7 +190,7 @@ const Index = () => {
               </div>
             </div>
             <div className="flex gap-5">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center rounded-lg">
                 <Mail className="h-5 w-5 text-gold" />
               </div>
               <div>
@@ -209,7 +209,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="bg-secondary p-8 border border-border">
+          <div className="bg-secondary p-8 border border-border rounded-xl">
             <div className="flex items-center gap-3 mb-6">
               <Clock className="h-5 w-5 text-gold-dark" />
               <h3 className="font-serif-display text-2xl font-semibold">Openingstijden</h3>
@@ -232,7 +232,7 @@ const Index = () => {
             width="100%"
             height="400"
             loading="lazy"
-            className="border border-border"
+            className="border border-border rounded-xl"
           />
         </div>
       </section>
