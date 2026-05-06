@@ -106,11 +106,11 @@ const Index = () => {
           <p className="text-gold font-medium tracking-[0.3em] text-xs uppercase mb-4">Specialiteiten</p>
           <h2 className="text-4xl md:text-5xl font-semibold mb-4">Onze populairste gerechten</h2>
           <div className="gold-divider w-24 mx-auto mb-4" />
-          <p className="text-muted-foreground max-w-xl mx-auto">Een selectie uit onze kaart — bekijk de volledige menukaart op Thuisbezorgd.</p>
+          <p className="text-muted-foreground max-w-xl mx-auto">Een selectie uit onze kaart — kom langs of bel ons om te bestellen.</p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {highlights.map((item) => (
-            <article key={item.name} className="group bg-card border border-border overflow-hidden hover:border-gold/50 transition-all duration-500 hover:shadow-gold flex flex-col">
+            <article key={item.name} className="group bg-card border border-border rounded-xl overflow-hidden hover:border-gold/50 transition-all duration-500 hover:shadow-gold flex flex-col">
               <div className="aspect-[4/3] overflow-hidden bg-primary">
                 <img src={item.img} alt={item.name} loading="lazy" width={896} height={896} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
@@ -123,9 +123,9 @@ const Index = () => {
           ))}
         </div>
         <div className="text-center mt-12">
-          <Button asChild size="lg" className="bg-gradient-gold text-white hover:opacity-90 font-semibold h-12 px-8">
-            <a href="https://www.thuisbezorgd.nl/menu/eethuis-al-shami" target="_blank" rel="noopener">
-              Bekijk volledige menukaart <ExternalLink className="ml-2 h-4 w-4" />
+          <Button asChild size="lg" className="bg-gradient-gold text-white hover:opacity-90 font-semibold h-12 px-8 rounded-lg">
+            <a href="tel:+31681932900">
+              <Phone className="mr-2 h-4 w-4" /> Bel om te bestellen
             </a>
           </Button>
         </div>
