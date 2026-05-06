@@ -340,7 +340,7 @@ const Index = () => {
         />
         <div className="absolute inset-0 bg-gradient-overlay" />
         <div className="relative z-10 container px-6 py-32">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
             <p className="text-gold font-medium tracking-[0.35em] text-xs md:text-sm mb-6 uppercase">Shoarma · Döner · Syrische Keuken</p>
             <h1 className="font-serif-display text-primary-foreground text-5xl md:text-7xl lg:text-8xl font-semibold leading-[1.02] mb-6">
               Eethuis<br />
@@ -351,13 +351,13 @@ const Index = () => {
               Authentieke shoarma van het spit, huisgemaakte manakeesh en Syrische specialiteiten —
               vers bereid in het hart van Middelburg.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="bg-gradient-gold text-gold-foreground hover:opacity-90 shadow-gold h-12 px-8 font-semibold">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-gradient-gold text-white hover:opacity-90 shadow-gold h-12 px-8 font-semibold">
                 <a href="https://www.thuisbezorgd.nl/menu/eethuis-al-shami" target="_blank" rel="noopener">
                   Online bestellen <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground hover:text-primary h-12 px-8">
+              <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/40 text-white hover:bg-primary-foreground hover:text-primary h-12 px-8">
                 <a href="tel:+31681932900"><Phone className="mr-2 h-4 w-4" /> +31 6 81932900</a>
               </Button>
             </div>
