@@ -323,7 +323,7 @@ const Index = () => {
             <a href="#reviews" className="hover:text-gold transition-colors">Beoordelingen</a>
             <a href="#contact" className="hover:text-gold transition-colors">Contact</a>
           </div>
-          <Button asChild size="sm" className="bg-gradient-gold text-gold-foreground hover:opacity-90 font-semibold">
+          <Button asChild size="sm" className="bg-gradient-gold text-white hover:opacity-90 font-semibold">
             <a href="https://www.thuisbezorgd.nl/menu/eethuis-al-shami" target="_blank" rel="noopener">Bestellen</a>
           </Button>
         </nav>
