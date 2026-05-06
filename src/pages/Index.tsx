@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Clock, Mail, Star, ExternalLink } from "lucide-react";
+import { useReveal } from "@/hooks/use-reveal";
 import heroImg from "@/assets/hero-shawarma-spit.jpg";
 import kapsalonImg from "@/assets/dish-kapsalon.jpg";
 import shawarmaImg from "@/assets/dish-shawarma.jpg";
@@ -31,10 +32,14 @@ const hours = [
 ];
 
 const Index = () => {
+  const info = useReveal<HTMLElement>();
+  const menu = useReveal<HTMLElement>();
+  const reviewsR = useReveal<HTMLElement>();
+  const contact = useReveal<HTMLElement>();
   return (
     <div className="min-h-screen bg-background">
       {/* Nav */}
-      <header className="fixed top-0 z-50 w-full bg-primary/95 backdrop-blur-md border-b border-gold/20">
+      <header className="fixed top-0 z-50 w-full bg-primary/95 backdrop-blur-md border-b border-gold/20 animate-fade-in">
         <nav className="container flex items-center justify-between h-16">
           <a href="#top" className="font-serif-display text-xl md:text-2xl font-semibold text-primary-foreground">
             Eethuis <span className="text-gradient-gold italic">Al Shami</span>
@@ -57,22 +62,22 @@ const Index = () => {
           alt="Kipshoarma van het spit met vlammen"
           width={1920}
           height={1280}
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
+          className="absolute inset-0 w-full h-full object-cover opacity-70 animate-scale-in"
         />
         <div className="absolute inset-0 bg-gradient-overlay" />
         <div className="relative z-10 container px-6 py-32">
           <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
-            <p className="text-gold font-medium tracking-[0.35em] text-xs md:text-sm mb-6 uppercase">Shoarma · Döner · Syrische Keuken</p>
-            <h1 className="font-serif-display text-primary-foreground text-5xl md:text-7xl lg:text-8xl font-semibold leading-[1.02] mb-6">
+            <p className="text-gold font-medium tracking-[0.35em] text-xs md:text-sm mb-6 uppercase animate-fade-in-up" style={{ animationDelay: "100ms" }}>Shoarma · Döner · Syrische Keuken</p>
+            <h1 className="font-serif-display text-primary-foreground text-5xl md:text-7xl lg:text-8xl font-semibold leading-[1.02] mb-6 animate-fade-in-up" style={{ animationDelay: "250ms" }}>
               Eethuis<br />
               <span className="text-gradient-gold italic">Al Shami</span>
             </h1>
-            <div className="gold-divider w-32 mb-6" />
-            <p className="text-primary-foreground/80 text-lg md:text-xl mb-10 max-w-xl leading-relaxed">
+            <div className="gold-divider w-32 mb-6 animate-fade-in-up" style={{ animationDelay: "450ms" }} />
+            <p className="text-primary-foreground/80 text-lg md:text-xl mb-10 max-w-xl leading-relaxed animate-fade-in-up" style={{ animationDelay: "550ms" }}>
               Authentieke shoarma van het spit, huisgemaakte manakeesh en Syrische specialiteiten —
               vers bereid in het hart van Middelburg.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: "750ms" }}>
               <Button asChild size="lg" className="bg-gradient-gold text-white hover:opacity-90 shadow-gold h-12 px-8 font-semibold rounded-lg">
                 <a href="tel:+31681932900"><Phone className="mr-2 h-4 w-4" /> Bel & reserveer</a>
               </Button>
@@ -85,14 +90,14 @@ const Index = () => {
       </section>
 
       {/* Quick info bar */}
-      <section className="bg-primary text-primary-foreground border-y border-gold/20">
+      <section ref={info.ref} className="bg-primary text-primary-foreground border-y border-gold/20">
         <div className="container grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gold/20">
           {[
             { icon: MapPin, label: "Vrijlandstraat 37, 4337 EB Middelburg" },
             { icon: Clock, label: "Open vandaag · 11:00 – 23:30" },
             { icon: Star, label: "4.1 ★ op Google" },
-          ].map(({ icon: Icon, label }) => (
-            <div key={label} className="flex items-center justify-center gap-3 py-5 px-4 text-sm">
+          ].map(({ icon: Icon, label }, i) => (
+            <div key={label} className={`flex items-center justify-center gap-3 py-5 px-4 text-sm ${info.visible ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: `${i * 120}ms` }}>
               <Icon className="h-4 w-4 text-gold" />
               <span>{label}</span>
             </div>
@@ -101,16 +106,16 @@ const Index = () => {
       </section>
 
       {/* Highlights */}
-      <section id="menu" className="py-24 md:py-32 container">
-        <div className="text-center mb-16">
+      <section ref={menu.ref} id="menu" className="py-24 md:py-32 container">
+        <div className={`text-center mb-16 ${menu.visible ? "animate-fade-in-up" : "opacity-0"}`}>
           <p className="text-gold font-medium tracking-[0.3em] text-xs uppercase mb-4">Specialiteiten</p>
           <h2 className="text-4xl md:text-5xl font-semibold mb-4">Onze populairste gerechten</h2>
           <div className="gold-divider w-24 mx-auto mb-4" />
           <p className="text-muted-foreground max-w-xl mx-auto">Een selectie uit onze kaart — kom langs of bel ons om te bestellen.</p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {highlights.map((item) => (
-            <article key={item.name} className="group bg-card border border-border rounded-xl overflow-hidden hover:border-gold/50 transition-all duration-500 hover:shadow-gold flex flex-col">
+          {highlights.map((item, i) => (
+            <article key={item.name} className={`group bg-card border border-border rounded-xl overflow-hidden hover:border-gold/50 transition-all duration-500 hover:shadow-gold flex flex-col ${menu.visible ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: `${150 + i * 120}ms` }}>
               <div className="aspect-[4/3] overflow-hidden bg-primary">
                 <img src={item.img} alt={item.name} loading="lazy" width={896} height={896} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
@@ -122,7 +127,7 @@ const Index = () => {
             </article>
           ))}
         </div>
-        <div className="text-center mt-12">
+        <div className={`text-center mt-12 ${menu.visible ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: "700ms" }}>
           <Button asChild size="lg" className="bg-gradient-gold text-white hover:opacity-90 font-semibold h-12 px-8 rounded-lg">
             <a href="tel:+31681932900">
               <Phone className="mr-2 h-4 w-4" /> Bel om te bestellen
@@ -132,9 +137,9 @@ const Index = () => {
       </section>
 
       {/* Reviews */}
-      <section id="reviews" className="py-24 md:py-32 bg-primary text-primary-foreground">
+      <section ref={reviewsR.ref} id="reviews" className="py-24 md:py-32 bg-primary text-primary-foreground">
         <div className="container">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 ${reviewsR.visible ? "animate-fade-in-up" : "opacity-0"}`}>
             <p className="text-gold font-medium tracking-[0.3em] text-xs uppercase mb-4">Beoordelingen</p>
             <h2 className="text-4xl md:text-5xl font-semibold mb-4">Wat onze gasten zeggen</h2>
             <div className="flex items-center justify-center gap-1 mb-2">
@@ -144,8 +149,8 @@ const Index = () => {
             <p className="text-primary-foreground/70 text-sm">4.1 / 5 op Google · 141 beoordelingen</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {reviews.map((r) => (
-              <article key={r.name} className="bg-primary-foreground/5 border border-gold/20 p-8 rounded-xl">
+            {reviews.map((r, i) => (
+              <article key={r.name} className={`bg-primary-foreground/5 border border-gold/20 p-8 rounded-xl ${reviewsR.visible ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: `${150 + i * 150}ms` }}>
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-gold text-gold" />)}
                 </div>
@@ -162,15 +167,15 @@ const Index = () => {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-24 md:py-32 container">
-        <div className="text-center mb-16">
+      <section ref={contact.ref} id="contact" className="py-24 md:py-32 container">
+        <div className={`text-center mb-16 ${contact.visible ? "animate-fade-in-up" : "opacity-0"}`}>
           <p className="text-gold-dark font-medium tracking-[0.3em] text-xs uppercase mb-4">Bezoek Ons</p>
           <h2 className="text-4xl md:text-5xl font-semibold mb-4">Contact & openingstijden</h2>
           <div className="gold-divider w-24 mx-auto" />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <div className="space-y-8">
+          <div className={`space-y-8 ${contact.visible ? "animate-slide-in-left" : "opacity-0"}`} style={{ animationDelay: "150ms" }}>
             <div className="flex gap-5">
               <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center rounded-lg">
                 <MapPin className="h-5 w-5 text-gold" />
@@ -209,7 +214,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="bg-secondary p-8 border border-border rounded-xl">
+          <div className={`bg-secondary p-8 border border-border rounded-xl ${contact.visible ? "animate-slide-in-right" : "opacity-0"}`} style={{ animationDelay: "300ms" }}>
             <div className="flex items-center gap-3 mb-6">
               <Clock className="h-5 w-5 text-gold-dark" />
               <h3 className="font-serif-display text-2xl font-semibold">Openingstijden</h3>
@@ -225,7 +230,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="mt-16 max-w-6xl mx-auto">
+        <div className={`mt-16 max-w-6xl mx-auto ${contact.visible ? "animate-fade-in-up" : "opacity-0"}`} style={{ animationDelay: "450ms" }}>
           <iframe
             title="Locatie Eethuis Al Shami"
             src="https://www.google.com/maps?q=Vrijlandstraat+37,+4337+EB+Middelburg&output=embed"
