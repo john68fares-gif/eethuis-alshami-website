@@ -199,12 +199,11 @@ const Index = () => {
               </div>
             </div>
             <div className="flex gap-5">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center rounded-lg">
                 <ExternalLink className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg mb-1">Online bestellen</h3>
-                <a href="https://www.thuisbezorgd.nl/menu/eethuis-al-shami" target="_blank" rel="noopener" className="text-muted-foreground hover:text-gold-dark block">Thuisbezorgd</a>
+                <h3 className="font-semibold text-lg mb-1">Website</h3>
                 <a href="https://eethuisalshami-middelburg.nl/" target="_blank" rel="noopener" className="text-muted-foreground hover:text-gold-dark block">eethuisalshami-middelburg.nl</a>
               </div>
             </div>
